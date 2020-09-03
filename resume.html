@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <title>HTML FlexBox Template - Two columns fixed, left extra stuff</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #292929;
+            font: 90% Roboto, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        p {
+            padding: 0 10px;
+            line-height: 1.8;
+        }
+
+        ul li {
+            padding-right: 10px;
+            line-height: 1.6;
+        }
+
+        h3 {
+            padding: 5px 20px;
+            margin: 0;
+        }
+               
+        h4 {
+            padding: 5px 20px;
+            margin: 0;
+        }
+
+
+        div#header {
+            position: relative;
+        }
+
+        div#header h1 {
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            padding-left: 10px;
+            background: #f5f5f5;
+            color: #292929;
+        }
+
+        div#header a {
+            position: absolute;
+            right: 0;
+            top: 23px;
+            padding: 10px;
+            color: #006;
+        }
+
+        div#navigation {
+            background: #7cb71c;
+        }
+
+        div#navigation li {
+            list-style: none;
+        }
+
+        div#extra {
+            background: #147FA9;
+        }
+
+        div#footer {
+            background: #42444e;
+            color: #fff;
+        }
+
+        div#footer p {
+            padding: 20px 10px;
+        }
+
+        div#container {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        div#content {
+            float: left;
+            width: 700px;
+        }
+
+        div#navigation {
+            float: right;
+            width: 200px;
+        }
+
+        div#extra {
+            float: left;
+            width: 700px;
+        }
+
+        div#footer {
+            clear: both;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Ken M. Abrams</h1>
+    </div>
+    <div id="wrapper">
+        <div id="content">
+            <h3>Experience</h3>
+            <h4>IT Operations Engineer – Bleacher Report (New York, NY) Aug 2016 - Current</h4>
+			<ul>
+            	<li>Maintain essential IT operations, including operating systems, security tools, applications, servers, email systems, laptops, desktops, software, and hardware</li>
+            	<li>Lead large IT projects, including the design and deployment of new IT systems, services, solutions, and key responsibilities within a larger business initiative</li>
+            	<li>Monitor performance of information technology systems to determine cost and productivity levels, and to make recommendations for improving the IT infrastructure</li>
+            	<li>Implement security best practices and maintenance</li>
+            	<li>Help define IT infrastructure strategy, architecture and processes</li>
+                <li>Analyze business requirements by partnering with key stakeholders across the organization to develop solutions for IT needs</li>
+       		</ul>
+            <h4>IT Associate - Schrodinger, Inc. (New York, NY) March 2013 - August 2016</h4>
+            <ul>
+              <li>Supported over 400 users on-site and remotely across multiple platforms (Mac, Linux, Windows)</li>
+              <li>Managed systems procurement, including software licenses and warranties, along with systems inventory</li>
+              <li>Accountable for the user administration-account commission/decommission (Google/LDAP/AD/Unix Directories)</li>
+              <li>Purchased, maintained, and installed SSL certificates on company’s websites</li>
+              <li>Rack/installed and configured physical servers</li>
+              <li>Administer and manage dev/test/prod environments (VMWare)</li>
+              <li>Troubleshoot internal networking issues</li>
+              <li>Developed and maintained all technical documentation and procedures</li>
+        	</ul>
+            <h4>AWS Tech CSA - Amazon Web Services, LLC (Herndon, VA) October 2011 - March 2013</h4>
+            <ul>
+              <li>Delivered prompt, detailed, and customer-focused service and support to AWS customers via phone and/or email</li>
+              <li>Worked collaboratively with other IT service and product teams via ticketing system to resolve complex issues</li>
+              <li>Provided support for AWS Management Console, a customer-facing in-house web application</li>
+              <li>Assumed responsibility for developing detailed knowledge articles about specific product lines and features</li>
+              <li>Supported customers with troubleshooting steps of AWS services and products for their architecture</li>
+              <li>Produced feasible business models for consolidated accounts/large amounts of data for premium clients</li>
+              <li>Created, reviewed, and updated training documentation for AWS New Hires</li>
+              <li>Trained new hires on AWS leadership principles, software and tools, AWS services, and products</li>
+       		</ul>
+            <h4>IT Consultant - Royal Communication Consultants (New York) October 2011 - Jan 2013</h4>
+            <ul>
+              <li>Provided Tier l technical support (basic troubleshooting/installing/configuring/re-imaging)</li>
+              <li>Supported and assisted end-users with PC issues through Goldman Sachs's ticket system</li>
+              <li>Tested network connectivity and provided analysis and reports on test results</li>
+              <li>Decommissioned data centers by disassembling servers and removing/reinstalling Ethernet cables</li>
+              <li>Lead a group of 10-15 JPMorgan consultants nightly</li>
+              <li>Maintained inventory of all IT equipment</li>
+        	</ul> 	
+        </div>
+    </div>
+    <div id="navigation">
+        <h3>Skills</h3><br>
+        <h4>Hardware/Platforms</h4>
+        <p>Deployments, Troubleshooting, A/V technologies, Windows OS, Mac OS X, Linux</p>
+        <h4>Languages</h4>
+        <p>Python, C, Java, HTML, Shell Scripting</p>
+        <h4>AWS</h4>
+		<p>EC2, S3, Route53, Cloudwatch, IAM, Lamda</p>
+        <h4>Tools</h4>
+		<p>Okta, G-Suite, Slack, JAMF, Docker, Jenkins, GitHub</p>
+    </div>
+    <div id="extra">
+        <h3>Education</h3>
+        <ul>
+            <li>Masters of Science: Digital Forensics & Cybersecurity <i>(John Jay College of Criminal Justice) - 2020</i></li>
+            <li>Bachelors of Arts: Information Science & Technology <i>(Univeristy at Albany) - 2009</i></li>
+            <li>Associate of Applied Science: Computer Information Systems <i>(Morrisillve State College - 2006</i></li>
+        </ul>
+        <h3>Certs</h3>
+        <ul>
+        	<li>AWS Solutions Architect Associate <i>Issued July 2020</i></li>
+            <li>JAMF Certified Admin</li>
+            <li>JAMF Cerfitied Tech</li>
+            <li>Okta Essentials</li>
+        </ul>
+    </div>
+    <div id="footer"><p>Last updated Aug 29th 2020</p>
+    </div>
+</div>
+<script type="713079407a6e4780a5d0ae45-text/javascript">AddFillerLink("content", "navigation", "extra")</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="713079407a6e4780a5d0ae45-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"5ca3b1c7bc6bf45c","version":"2020.7.0","si":10}'></script>
+</body>
+</html>
