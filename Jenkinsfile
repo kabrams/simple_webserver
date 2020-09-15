@@ -13,7 +13,7 @@ pipeline {
         stage('Run letsencrypt script') {
             steps {
                 echo 'Running letsencrypt script..'
-                sh 'sudo ./init-letsencrypt.sh'
+                sh './init-letsencrypt.sh'
             }
         }
         stage('Deploy') {
