@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                sh 'docker-compose up -d'
+                sh '/usr/bin/docker-compose up -d'
             }
         }
         stage('Get website pages') {
