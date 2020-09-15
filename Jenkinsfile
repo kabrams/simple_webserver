@@ -10,6 +10,7 @@ pipeline {
                 sh 'curl -LJO https://raw.githubusercontent.com/kabrams/simple_webserver/master/app.conf'
                 sh 'curl -LJO https://raw.githubusercontent.com/kabrams/simple_webserver/master/init-letsencrypt.sh'
                 sh 'chmod +x init-letsencrypt.sh'
+                sh 'sudo mv app.conf ./data/nginx'
                 echo 'Copied over files'
             }
         }
@@ -23,7 +24,6 @@ pipeline {
             steps {
                 echo 'Deploying..'
                 sh 'docker-compose up -d'
-                sh 'sudo mv app.conf ./data/nginx'
             }
         }
         stage('Get website pages') {
