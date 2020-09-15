@@ -41,15 +41,15 @@ pipeline {
         }
         stage('Move files over to directory') {
             steps {
-                sh 'docker cp android-chrome-192x192.png simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp android-chrome-512x512.png simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp apple-touch-icon.png simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp favicon-16x16.png simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp favicon-32x32.png simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp favicon.ico simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp index.html simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp resume.html simplewebserverpipeline:/usr/share/nginx/html/'
-                sh 'docker cp site.webmanifest simplewebserverpipeline:/usr/share/nginx/html/'
+                sh 'docker cp android-chrome-192x192.png simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp android-chrome-512x512.png simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp apple-touch-icon.png simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp favicon-16x16.png simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp favicon-32x32.png simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp favicon.ico simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp index.html simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp resume.html simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'docker cp site.webmanifest simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
                 echo 'Files moved over to correct location in docker container'
             }   
         }
