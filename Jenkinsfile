@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Deploying..'
                 sh 'docker-compose up -d'
-                sh 'mv app.conf ./data/nginx'
+                sh 'sudo mv app.conf ./data/nginx'
             }
         }
         stage('Get website pages') {
