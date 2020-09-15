@@ -47,6 +47,7 @@ pipeline {
                 sh 'docker cp index.html jenkins-data_nginx_1:/usr/share/nginx/html/'
                 sh 'docker cp resume.html jenkins-data_nginx_1:/usr/share/nginx/html/'
                 sh 'docker cp site.webmanifest jenkins-data_nginx_1:/usr/share/nginx/html/'
+                echo 'Files moved over to correct location in docker container'
             }   
         }
     }
