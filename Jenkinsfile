@@ -9,8 +9,7 @@ pipeline {
                 sh 'curl -LJO https://raw.githubusercontent.com/kabrams/simple_webserver/master/docker-compose.yml'
                 sh 'curl -LJO https://raw.githubusercontent.com/kabrams/simple_webserver/master/app.conf'
                 sh 'curl -LJO https://raw.githubusercontent.com/kabrams/simple_webserver/master/init-letsencrypt.sh'
-                sh 'chmod +x init-letsencrypt.sh'
-                sh 'sudo mv app.conf ./data/nginx'
+                sh 'chmod +x init-letsencrypt.sh'    
                 echo 'Copied over files'
             }
         }
@@ -51,6 +50,7 @@ pipeline {
                 sh 'docker cp index.html simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
                 sh 'docker cp resume.html simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
                 sh 'docker cp site.webmanifest simplewebserverpipeline_nginx_1:/usr/share/nginx/html/'
+                sh 'sudo mv app.conf ./data/nginx'
                 echo 'Files moved over to correct location in docker container'
             }   
         }
