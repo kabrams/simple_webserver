@@ -2,6 +2,9 @@ pipeline {
     agent any
     environment {
         PATH = "$PATH:/usr/local/bin"
+        registry = "kabrams17/simple_web_server"
+        registryCredential = 'docker-creds'
+        dockerImage = ''
     }
     stages {
         stage('Get files') {
@@ -53,6 +56,22 @@ pipeline {
                 sh 'sudo mv app.conf ./data/nginx'
                 echo 'Files moved over to correct location in docker container'
             }   
+        }
+        stage('Building image') {
+            steps {
+                script {
+                    dockerImage = docker.build registry + ":BUILD_NUMBER"
+                }
+            }
+        }
+        stage('Deploy image') {
+            steps {
+                script {
+                    docker.withRegistry( '', registryCrediential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
         }
     }
 }
