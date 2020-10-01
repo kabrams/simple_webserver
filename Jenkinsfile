@@ -3,6 +3,7 @@ pipeline {
     environment {
         PATH = "$PATH:/usr/local/bin"
         registry = "kabrams17/simple_web_server"
+        registry_url = "https://hub.docker.com/repository/docker/kabrams17/simple_web_server"
         registryCredential = 'docker-creds'
         dockerImage = ''
         currentImage="simplewebserverpipeline_nginx_1"
@@ -65,7 +66,7 @@ pipeline {
         }
         stage('Push image to dockerhub') {
             steps {
-                withDockerRegistry([ credentialsId: registryCredential, url: registry ]) {
+                withDockerRegistry([ credentialsId: registryCredential, url: registry_url ]) {
                 sh 'docker push new_webserver'
                 }
             }
