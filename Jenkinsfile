@@ -67,7 +67,7 @@ pipeline {
         stage('Push image to dockerhub') {
             steps {
                 script {
-                    docker.withRegistry( "https://hub.docker.com/repository/docker/kabrams17/simple_web_server" , registryCredential) {
+                    docker.withRegistry( '' , registryCredential) {
                         sh 'docker push new_webserver'
                     }
                 }
