@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry( '' , registryCredential) {
-                        sh 'docker push new_webserver'
+                        sh 'docker push ${registry}:new_webserver'
                     }
                 }
             }
