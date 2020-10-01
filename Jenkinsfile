@@ -58,22 +58,8 @@ pipeline {
                 echo 'Files moved over to correct location in docker container'
             }   
         }
-        stage('Building image') {
-            steps {
-                sh 'docker commit ${currentImage} new_webserver:${env.BUILD_ID}'
-                dockerImage=new_webserver:${env.BUILD_ID}
-            }
-        }
 
-        stage('Deploy image') {
-            steps {
-                script {
-                    docker.withRegistry( '', registryCrediential ) {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
     }
 }
+    
 
