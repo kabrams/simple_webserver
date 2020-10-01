@@ -5,6 +5,7 @@ pipeline {
         registry = "kabrams17/simple_web_server"
         registryCredential = 'docker-creds'
         dockerImage = ''
+        currentImage="simplewebserverpipeline_nginx_1"
     }
     stages {
         stage('Get files') {
@@ -59,11 +60,11 @@ pipeline {
         }
         stage('Building image') {
             steps {
-                script {
-                    dockerImage = docker.build registry + ":BUILD_NUMBER"
-                }
+                sh 'docker commit ${currentImage} new_webserver:${env.BUILD_ID}'
+                dockerImage=new_webserver:${env.BUILD_ID}
             }
         }
+
         stage('Deploy image') {
             steps {
                 script {
