@@ -58,8 +58,20 @@ pipeline {
                 echo 'Files moved over to correct location in docker container'
             }   
         }
-
+        stage('Create custom image') {
+            steps {
+                sh 'docker commit ${currentImage} new_webserver'
+            }
+        }
+        stage('Push image to dockerhub') {
+            steps {
+                withDockerRegistry([ credentialsId: registryCredential, url: registry ]) {
+                sh 'docker push new_webserver'
+                }
+            }
+        }
     }
-}
+ }
+
     
 
