@@ -61,15 +61,14 @@ pipeline {
         }
         stage('Create custom image') {
             steps {
-                sh 'docker commit ${currentImage} new_webserver'
-                dockerImage = new_webserver + ":$BUILD_NUMBER"
+                sh 'docker commit ${currentImage} new_webserver'        
             }
         }
         stage('Push image to dockerhub') {
             steps {
                 script {
                     docker.withRegistry( '', registryCredential) {
-                        dockerImage.push()
+                        sh 'docker push new_webserver'
                     }
                 }
             }
