@@ -67,7 +67,7 @@ pipeline {
         stage('Push image to dockerhub') {
             steps {
                 script {
-                    docker.withRegistry( '', registryCredential) {
+                    docker.withRegistry( registry, registryCredential) {
                         sh 'docker push new_webserver'
                     }
                 }
