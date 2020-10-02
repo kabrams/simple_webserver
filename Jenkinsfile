@@ -5,7 +5,7 @@ pipeline {
         registry = "kabrams17/simple_web_server"
         registry_url = "https://hub.docker.com/repository/docker/kabrams17/simple_web_server"
         registryCredential = 'docker-creds'
-        dockerImage = ''
+        dockerImage = "myweb-image:${env.BUILD_ID}"
         currentImage="simplewebserverpipeline_nginx_1"
     }
     stages {
@@ -61,15 +61,15 @@ pipeline {
         }
         stage('Create custom image') {
             steps {
-                sh 'docker commit ${currentImage} new_webserver'        
+                sh 'docker commit ${currentImage} ${dockerImage}'        
             }
         }
         stage('Push image to dockerhub') {
             steps {
                 script {
                     docker.withRegistry( '' , registryCredential) {
-                        sh 'docker tag new_webserver docker.io/${registry}:new_webserver'
-                        sh 'docker push ${registry}:new_webserver'
+                        sh 'docker tag new_webserver docker.io/${registry}:${dockerImage}'
+                        sh 'docker push ${registry}:${dockerImage}'
                     }
                 }
             }
