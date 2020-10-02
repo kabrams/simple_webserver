@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry( '' , registryCredential) {
-                        sh 'docker tag new_webserver docker.io/${registry}:${dockerImage}'
+                        sh 'docker tag ${dockerImage} docker.io/${registry}:${dockerImage}'
                         sh 'docker push ${registry}:${dockerImage}'
                     }
                 }
