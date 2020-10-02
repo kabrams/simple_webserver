@@ -5,7 +5,7 @@ pipeline {
         registry = "kabrams17/simple_web_server"
         registry_url = "https://hub.docker.com/repository/docker/kabrams17/simple_web_server"
         registryCredential = 'docker-creds'
-        dockerImage = "myweb-image:${env.BUILD_ID}"
+        dockerImage = "myweb_image-${env.BUILD_ID}"
         currentImage="simplewebserverpipeline_nginx_1"
     }
     stages {
